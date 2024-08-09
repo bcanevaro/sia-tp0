@@ -4,13 +4,12 @@ import csv
 from itertools import product
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 from src.catching import attempt_catch
 from src.pokemon import PokemonFactory, StatusEffect
 
 if __name__ == "__main__":
-    factory = PokemonFactory("../pokemon.json")
+    factory = PokemonFactory("pokemon.json")
 
     with open(f"{sys.argv[1]}", "r") as f:
         config = json.load(f)
@@ -29,7 +28,7 @@ if __name__ == "__main__":
                 averageCatchRate=np.average([attempt_catch(pokemonInstance,ball)[0] for _ in range(iterations)])
                 data.append([averageCatchRate,pokemonInstance.name,ball])
 
-        with open("../ej1a.csv", "w") as file:
+        with open("ej1a.csv", "w") as file:
             writer = csv.writer(file)
 
             header = ["Catch Rate", "pokemon", "ball"]
