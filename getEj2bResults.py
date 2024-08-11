@@ -28,7 +28,7 @@ upper_bound = mean_y + std_dev_y
 lower_bound = mean_y - std_dev_y
 
 # Create a colormap from green to yellow to red
-cmap = LinearSegmentedColormap.from_list("mycmap", ["green", "yellow", "red"])
+cmap = LinearSegmentedColormap.from_list("mycmap", ["red", "yellow", "green"])
 
 # Generate x values
 x = np.arange(len(mean_y))
@@ -54,7 +54,7 @@ ax.add_collection(lc)
 ax.fill_between(x, lower_bound, upper_bound, color='grey', alpha=0.2, label='±1 Std Dev')
 
 # Customize the plot
-ax.set_title('Catch rate vs HP % for Caterpie with a Pokeball')
+ax.set_title(f'Catch rate vs HP % for {pokemon} with a {ball}')
 ax.set_xlabel('HP %')
 ax.set_ylabel('Catch rate')
 ax.legend()
