@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-cvs_file= "../ej1a.csv"
+cvs_file= "ej1a.csv"
 data=pd.read_csv(cvs_file)
 
 group_by=data.groupby('ball')
