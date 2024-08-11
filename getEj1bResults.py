@@ -49,6 +49,6 @@ ax.set_title('Effectiveness of pokeballs according to intrinsic properties of po
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
 ax.legend()
-
+plt.axhline(y=1, color='r', linestyle='--', label='Threshold = 1')
 # Show the plot
 plt.show()
