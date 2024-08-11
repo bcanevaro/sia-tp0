@@ -32,5 +32,19 @@ plt.legend()
 
 plt.show()
 
-plt.bar(x=balls,height=catch_rates)
+# Calcular la varianza de Catch Rate por tipo de ball
+varianza = data.groupby('ball')['Catch Rate'].var()
+
+# Crear un gráfico de barras para mostrar la varianza
+plt.figure(figsize=(8, 5))
+varianza.plot(kind='bar', color=['blue', 'orange'])
+
+# Añadir etiquetas y título
+plt.xlabel('Pokeball')
+plt.ylabel('Varianza')
+plt.title('Varianza de Catch Rate por Tipo de Pokéball')
+plt.xticks(rotation=0)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Mostrar el gráfico
 plt.show()
