@@ -18,7 +18,7 @@ if __name__ == "__main__":
         pokemons = config["pokemon"]
 
         pokemonInstances=[]
-        iterations=100
+        iterations=100000
 
         for pokemon in pokemons:
             pokemonInstances.append(factory.create(pokemon, 100, StatusEffect.NONE, 1))
