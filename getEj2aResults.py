@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
+from src.pokemon import StatusEffect
 
 cvs_file= "./ej2a.csv"
 data=pd.read_csv(cvs_file)
@@ -11,8 +12,8 @@ group_by=data.groupby('Status')
 data = pd.read_csv(cvs_file).pivot(index='Status', columns='Pokemon', values='CatchRate')
 order = ["caterpie", "snorlax", "jolteon", "onix", "mewtwo"]
 data = data[order]
-statusOrder = ['StatusEffect.POISON', 'StatusEffect.BURN',
-                'StatusEffect.PARALYSIS', 'StatusEffect.SLEEP', 'StatusEffect.FREEZE']
+statusOrder = [StatusEffect.POISON.name, StatusEffect.BURN.name,
+                StatusEffect.PARALYSIS.name, StatusEffect.SLEEP.name, StatusEffect.FREEZE.name]
 data = data.reindex(statusOrder)
 
 plt.figure(figsize=(10,8))

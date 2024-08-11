@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
         pokemons = config["pokemon"]
 
-        iterations = 10000
+        iterations = 100000
         data = []
 
         statusList = [StatusEffect.POISON, StatusEffect.BURN, StatusEffect.PARALYSIS,
@@ -36,7 +36,7 @@ if __name__ == "__main__":
                 pokemonInstance = factory.create(pokemon, 100, status, 1)
 
                 normalizedAverageCatchRate = np.average([attempt_catch(pokemonInstance, balls)[0] for _ in range(iterations)]) / noneStatusCatchRate[pokemon]
-                data.append([pokemonInstance.name, status, balls, normalizedAverageCatchRate])
+                data.append([pokemonInstance.name, status.name, balls, normalizedAverageCatchRate])
 
 
 
