@@ -1,10 +1,6 @@
 import json
 import sys
 import csv
-from itertools import product
-
-import numpy as np
-import pandas as pd
 
 from src.catching import attempt_catch
 from src.pokemon import PokemonFactory, StatusEffect

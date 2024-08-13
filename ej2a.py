@@ -1,8 +1,6 @@
 import json
 import sys
 import csv
-from itertools import product
-
 import numpy as np
 
 from src.catching import attempt_catch
@@ -45,19 +43,4 @@ if __name__ == "__main__":
             header = ["Pokemon", "Status", "Ball", "CatchRate"]
             writer.writerow(header)
             writer.writerows(data)
-
-        # for pokemon in pokemons:
-        #     pokemonInstances.append(factory.create(pokemon, 100, StatusEffect.NONE, 1))
-        #
-        # data=[]
-        # for ball,pokemonInstance in product(balls, pokemonInstances):
-        #         averageCatchRate=np.average([attempt_catch(pokemonInstance,ball)[0] for _ in range(iterations)])
-        #         data.append([averageCatchRate,pokemonInstance.name,ball])
-        #
-        # with open("ej1a.csv", "w") as file:
-        #     writer = csv.writer(file)
-        #
-        #     header = ["Catch Rate", "pokemon", "ball"]
-        #     writer.writerow(header)
-        #     writer.writerows(data)
 
